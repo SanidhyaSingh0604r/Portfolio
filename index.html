@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanidhya Singh | Portfolio</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #020617;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #38bdf8, transparent 70%);
+      filter: blur(120px);
+      opacity: 0.35;
+      animation: float 10s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob1 { top: -120px; left: -120px; }
+    .blob2 { bottom: -120px; right: -120px; }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(60px); }
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .hero h1 { font-size: 3.2rem; }
+
+    .hero span {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .typing { margin-top: 15px; font-size: 1.3rem; color: #94a3b8; }
+    #role { color: #38bdf8; border-right: 2px solid #38bdf8; padding-right: 5px; }
+
+    .btn {
+      margin-top: 30px;
+      padding: 14px 36px;
+      background: #38bdf8;
+      color: #020617;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(56,189,248,0.45);
+    }
+
+    .section { padding: 120px 10%; position: relative; z-index: 2; }
+    .section h2 { font-size: 2.4rem; text-align: center; margin-bottom: 50px; }
+
+    .box {
+      max-width: 800px;
+      margin: auto;
+      background: #020617;
+      border: 1px solid #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .skills { max-width: 700px; margin: auto; }
+    .skill { margin-bottom: 25px; }
+    .skill span { display: block; margin-bottom: 6px; }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      background: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      border-radius: 10px;
+      transition: width 1.2s ease;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      padding: 35px;
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 22px;
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(56,189,248,0.2);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="reveal">Hi, I’m <span>Sanidhya Singh</span></h1>
+  <p class="typing reveal"><span id="role"></span></p>
+  <a href="#about" class="btn reveal">Explore More</a>
+</section>
+
+<!-- ABOUT ME -->
+<section id="about" class="section">
+  <h2 class="reveal">About Me</h2>
+  <div class="box reveal">
+    I am a Computer Science undergraduate with a strong interest in building practical, technology-driven solutions.
+    I enjoy working across domains such as software development, <strong>MERN Stack development</strong>,
+    <strong>Data Science</strong>, computer vision, IoT, and data-driven applications.
+    <br><br>
+    I am motivated to continuously improve my technical and problem-solving skills through hands-on projects,
+    research exposure, and consistent learning in core computer science and emerging technologies.
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section">
+  <h2 class="reveal">Education</h2>
+  <div class="box reveal">
+
+    <strong>B.Tech – Computer Science</strong><br>
+    KIET Deemed to be University,Ghaziabad<br>
+    CGPA: 7.51 (Till 3rd Semester)<br>
+    Expected Year of Graduation: 2028
+    <br><br>
+
+    <strong>Class XII (Senior Secondary)</strong><br>
+    Academic Global School,Gorakhpur<br>
+    Percentage: 77%<br>
+    Year of Passing: 2023
+    <br><br>
+
+    <strong>Class X (Secondary)</strong><br>
+    Jeevan Marg Sophia Secondary School,Deoria<br>
+    Percentage: 87%<br>
+    Year of Passing: 2021
+
+  </div>
+</section>
+
+
+<!-- TECHNICAL SKILLS -->
+<section class="section">
+  <h2 class="reveal">Technical Skills</h2>
+  <div class="skills">
+
+    <div class="skill reveal">
+      <span>C++ / Data Structures & Algorithms</span>
+      <div class="bar"><div class="fill" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill reveal">
+      <span>Python (Programming & Data Science Basics)</span>
+      <div class="bar"><div class="fill" data-width="80%"></div></div>
+    </div>
+
+    <div class="skill reveal">
+      <span>MERN Stack (MongoDB, Express.js, React.js, Node.js)</span>
+      <div class="bar"><div class="fill" data-width="70%"></div></div>
+    </div>
+
+    <div class="skill reveal">
+      <span>DBMS, SQL & NoSQL</span>
+      <div class="bar"><div class="fill" data-width="75%"></div></div>
+    </div>
+
+    <div class="skill reveal">
+      <span>HTML, CSS & JavaScript</span>
+      <div class="bar"><div class="fill" data-width="75%"></div></div>
+    </div>
+
+    <div class="skill reveal">
+      <span>Linux Fundamentals & Git Basics</span>
+      <div class="bar"><div class="fill" data-width="70%"></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section">
+  <h2 class="reveal">Projects</h2>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>Gesture-Controlled Chrome Dino Game</h3>
+      <p>Computer vision–based gesture control system using OpenCV and PyAutoGUI to automate gameplay.</p>
+    </div>
+    <div class="card reveal">
+      <h3>IoT Home Automation</h3>
+      <p>Relay-controlled LEDs and motors demonstrating IoT fundamentals and hardware–software integration.</p>
+    </div>
+    <div class="card reveal">
+      <h3>Smart Study Assistant</h3>
+      <p>Streamlit-based productivity application using Pomodoro technique and priority-based scheduling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section">
+  <h2 class="reveal">Achievements</h2>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>Research Paper Presentation</h3>
+      <p>Presented a research paper on Boolean Algebra at ICSCMM’24.</p>
+    </div>
+    <div class="card reveal">
+      <h3>National Finalist – Kshitij 2026</h3>
+      <p>Aeromodelling competition finalist at IIT Kharagpur.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section">
+  <h2 class="reveal">Certifications</h2>
+  <div class="cards">
+
+    <a href="certificates/Mern.jpeg" target="_blank" class="card reveal">
+      MERN Stack Development Certification
+    </a>
+
+    <a href="certificates/NoSQL.pdf" target="_blank" class="card reveal">
+      Introduction to SQL and NoSQL Databases
+    </a>
+
+    <a href="certificates/Research_Paper.jpeg" target="_blank" class="card reveal">
+      Research Paper Presentation Certificate
+    </a>
+
+    <a href="certificates/kshitij.pdf" target="_blank" class="card reveal">
+      Kshitij 2026 Participation Certificate
+    </a>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="section">
+  <h2 class="reveal">Contact</h2>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>📞 Phone</h3>
+      <p>8218540098</p>
+    </div>
+    <div class="card reveal">
+      <h3>📧 Email</h3>
+      <p>
+        <a href="mailto:mrbo8460@gmail.com" style="color:#38bdf8; text-decoration:none;">
+          mrbo8460@gmail.com
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const roles = [
+    "Computer Science Student",
+    "MERN Stack Developer",
+    "Data Science Enthusiast",
+    "Research-Oriented Learner"
+  ];
+
+  let i = 0, j = 0;
+  const roleSpan = document.getElementById("role");
+
+  function type() {
+    if (j < roles[i].length) {
+      roleSpan.textContent += roles[i][j++];
+      setTimeout(type, 100);
+    } else setTimeout(erase, 1500);
+  }
+
+  function erase() {
+    if (j > 0) {
+      roleSpan.textContent = roles[i].substring(0, --j);
+      setTimeout(erase, 50);
+    } else {
+      i = (i + 1) % roles.length;
+      setTimeout(type, 400);
+    }
+  }
+  type();
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        const bar = entry.target.querySelector(".fill");
+        if (bar) bar.style.width = bar.dataset.width;
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
